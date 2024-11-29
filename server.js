@@ -6,6 +6,11 @@ let onlineDevices = {};
 
 app.use(express.json());
 
+// Ruta para la raíz "/"
+app.get('/', (req, res) => {
+  res.send('¡Servidor conectado correctamente!');
+});
+
 // Endpoint para registrar que una laptop está en línea
 app.post('/register', (req, res) => {
     const { serialNumber } = req.body;
